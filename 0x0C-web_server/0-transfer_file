@@ -14,3 +14,10 @@ username=$3
 path_to_ssh_key=$4
 
 scp -o "StrictHostKeyCheck=no" -i "$path_to_ssh_key" "$path_to_file" "$username@ip:~/"
+
+if [ $? -eq 0 ]
+then
+	echo "file transferred sucessfully"
+else
+	echo "transfer failed"
+fi
